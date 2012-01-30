@@ -64,7 +64,12 @@ function cdata_section($content)
  */
 function comment_as_conditional($condition, $content)
 {
-  return "<!--[if $condition]>$content<![endif]-->";
+  if ($condition == '!IE') {
+    return "<!--[if !IE]> -->$content<!-- <![endif]-->";
+  }
+  else {
+    return "<!--[if $condition]>$content<![endif]-->";
+  }
 }
 
 /**
