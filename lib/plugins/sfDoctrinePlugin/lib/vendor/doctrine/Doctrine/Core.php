@@ -1141,6 +1141,8 @@ class Doctrine_Core
             return false;
         }
 
+        sfAutoload::getInstance()->autoload($className);
+
         if ( ! self::$_modelsDirectory) {
             $loadedModels = self::$_loadedModelFiles;
 
